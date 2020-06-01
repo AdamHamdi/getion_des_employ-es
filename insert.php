@@ -1,14 +1,4 @@
-<?php 
-include('nav.php');
-include('connection.php');
 
-
-
-
-
-
-
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,12 +11,21 @@ include('connection.php');
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+  <?php include('nav.php'); ?>
+    <?php include('connection.php'); ?>
+    <?php 
+$mysqli= new mysqli($localhost,$user,$password,$db)or die(mysqli_error($mysqli));
+
+
+
+?>
     
  <div class="container">
      <div class="row ">
          <div class="col-md-6 offset-md-3">
              <h1 style="color:#564343;font-family:sans-serif; text-align:center;">Ajouter Employée:</h1><br><br>
-             <form action="index.php" method="post">
+             
+             <form action="connection.php" method="POST">
             <div class="form-group">
               <label for="">Nom:</label>
               <input type="text" name="nom" id="" class="form-control" placeholder="Saisir votre nom" aria-describedby="helpId">

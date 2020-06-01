@@ -24,17 +24,12 @@ include('connection.php')
         <![endif]-->
     </head>
     <body>
-    <?php 
-if(isset($_SESSION['message'])):
-?>
-<div class="alert alert-<?= $_SESSION['msg_type']?>">
-<?php 
-echo $_SESSION['message'];
-unset($_SESSION['message']);
-
-?>
-</div>
-<?php endif ?>
+    <?php if(isset($_SESSION['message'])){?>
+      
+      <div class="alert alert-<?=$_SESSION['msg_type'];?>" role="alert">
+           <a href="index.php" class="alert-link"> </a><?=$_SESSION['message'];?>
+       </div>
+       <?php } unset($_SESSION['message']); ?>
 
 
 
@@ -60,6 +55,7 @@ function pre_r($array) {
                 <br><br>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <h1 style="text-align:center; font-family:sans-serif;color:#434343;">Liste des employées:</h1><br>
+                
                     <table class="table table-striped">
                         <thead  class="thead-light">
                         <tr>
