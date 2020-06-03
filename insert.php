@@ -33,7 +33,7 @@ $mysqli= new mysqli($localhost,$user,$password,$db)or die(mysqli_error($mysqli))
               <input type="text" name="date_naissance" id="" class="form-control" placeholder="Saisir votre date de naissance" aria-describedby="helpId">
               <label for="">Salaire:</label>
               <input type="text" name="salaire" id="" class="form-control" placeholder="Saisir votre salaire" aria-describedby="helpId">
-              <br><input type="submit" name='submit' value="Ajouter" class="btn btn-block btn-info">
+              <br><input type="submit" name='submit' value="Ajouter" class="btn btn-block btn-success">
             </div>
              </form>
          </div>
