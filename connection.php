@@ -14,9 +14,9 @@ $salaire='';
        
        $mysqli= new mysqli($localhost,$user,$password,$db)or die(mysqli_error($mysqli));
 if(isset($_POST['submit'])){
-    $nom= ($_POST['nom']);
-    $date_naissance=( $_POST['date_naissance']);
-    $salaire= ($_POST['salaire']);
+    $nom= strip_tags(($_POST['nom']));
+    $date_naissance=(strip_tags($_POST['date_naissance']));
+    $salaire= strip_tags(($_POST['salaire']));
     
     $mysqli->query("INSERT INTO employee (nom, date_naissance, salaire)VALUES('$nom','$date_naissance','$salaire')")or(die($mysqli->error));
    //message de confirmation
@@ -48,10 +48,10 @@ if(isset($_GET['edit'])){
   }
   }
   if(isset($_POST['update'])){
-    $id= ($_POST['id']);
-    $nom= ($_POST['nom']);
-    $date_naissance=( $_POST['date_naissance']);
-    $salaire= ($_POST['salaire']);
+    $id= (strip_tags($_POST['id']));
+    $nom= strip_tags(($_POST['nom']));
+    $date_naissance=(strip_tags($_POST['date_naissance']));
+    $salaire= strip_tags(($_POST['salaire']));
     $mysqli->query("UPDATE  employee SET nom='$nom',date_naissance='$date_naissance', salaire='$salaire' WHERE id=$id")or die($mysqli->error);
   
     $_SESSION['message']="Mise à jour a été effectué avec success";
